@@ -11,12 +11,15 @@ import sys
 import uuid
 from pathlib import Path
 
-# 终端模式强制使用 R1 (质量最高)，除非用户通过环境变量覆盖
-if "TVC_MODEL" not in os.environ:
-    os.environ["TVC_MODEL"] = "deepseek-reasoner"
-
 # 确保能 import src/
 sys.path.insert(0, str(Path(__file__).parent.parent))
+
+from dotenv import load_dotenv
+load_dotenv()
+
+# 终端模式默认使用 R1 (质量最高)，但优先尊重 .env 中的设置
+if "TVC_MODEL" not in os.environ:
+    os.environ["TVC_MODEL"] = "deepseek-reasoner"
 
 from src.agent import create_tvc_director_local
 from langgraph.types import Command
