@@ -37,12 +37,13 @@ load_dotenv()
 # Web 前端(langgraph dev) 用 V3: 速度快、异步兼容
 # 终端脚本(chat.py) 用 R1: 质量最高、阻塞式思考
 #
-# 可通过环境变量 TVC_MODEL 强制覆盖
-DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY", "")
+# 可通过环境变量覆盖，支持任意 OpenAI 兼容的 API 供应商
+TVC_API_KEY = os.getenv("TVC_API_KEY", os.getenv("DEEPSEEK_API_KEY", ""))
+TVC_API_BASE = os.getenv("TVC_API_BASE", "https://api.deepseek.com")
 MODEL_NAME = os.getenv("TVC_MODEL", "deepseek-chat")  # 默认 V3 (兼容 langgraph dev)
 
 def _create_llm(model_override: str | None = None, temperature: float = 0.7):
-    """创建 DeepSeek LLM 实例（OpenAI 兼容）。
+    """创建 LLM 实例（支持任意 OpenAI 兼容的 API 接口）。
     
     Args:
         model_override: 如果指定，使用该模型名称而不是默认的 MODEL_NAME
@@ -51,8 +52,8 @@ def _create_llm(model_override: str | None = None, temperature: float = 0.7):
     model = model_override or MODEL_NAME
     return ChatOpenAI(
         model=model,
-        api_key=DEEPSEEK_API_KEY,
-        base_url="https://api.deepseek.com",
+        api_key=TVC_API_KEY,
+        base_url=TVC_API_BASE,
         temperature=temperature,
     )
 
