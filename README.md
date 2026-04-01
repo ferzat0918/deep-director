@@ -2,7 +2,7 @@
   <img src="docs/banner.png" alt="TVC Director Agent Banner" width="100%">
 </p>
 
-<h1 align="center">🎬 TVC Director Agent</h1>
+<h1 align="center">🎬 Deep Director</h1>
 
 <p align="center">
   <strong>AI-Powered Multi-Agent TVC (TV Commercial) Script Director</strong><br>
@@ -89,8 +89,8 @@ graph TD
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/ferzat0918/ad-content-creator.git
-cd ad-content-creator
+git clone https://github.com/ferzat0918/deep-director.git
+cd deep-director
 
 # 2. Configure environment
 cp .env.example .env
@@ -108,8 +108,8 @@ docker compose up --build -d
 
 ```bash
 # 1. Clone & setup
-git clone https://github.com/ferzat0918/ad-content-creator.git
-cd ad-content-creator
+git clone https://github.com/ferzat0918/deep-director.git
+cd deep-director
 
 # 2. Create virtualenv
 python -m venv .venv
@@ -226,7 +226,7 @@ The Showrunner evaluates every script against a **100-point checklist** across 6
 ## 📁 Project Structure
 
 ```
-ad-content-creator/
+deep-director/
 ├── src/
 │   ├── agent.py           # Main agent factory — Showrunner + 3 Sub-agents
 │   └── prompts.py         # Prompt loader (composes OS files per agent)
