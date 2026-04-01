@@ -1,0 +1,6 @@
+{
+  "dependencies": ["."],
+  "graphs": {
+    "tvc_director": "./src/agent.py:create_tvc_director"
+  }
+}

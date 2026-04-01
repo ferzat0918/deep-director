@@ -1,0 +1,13 @@
+# Docker build context exclusions
+.venv/
+__pycache__/
+*.pyc
+.env
+.langgraph_api/
+frontend/
+scripts/
+thread_history.json
+*.md
+!prompts/*.md
+.git/
+.agent/

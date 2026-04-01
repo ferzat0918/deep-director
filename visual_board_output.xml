@@ -1,0 +1,92 @@
+<thinking>
+<camera_strategy>
+基于科技风（科技/未来）的风格映射和MasterShots权力动力学规则：
+
+1. **问题阶段 (Block 1-3)**: 应用孤立感 + 权力弱势
+   - 使用低角度拍摄空间/家具（问题主导）
+   - 高角度拍摄消费者（弱势）
+   - 浅景深突出消费者孤独感
+   - 静态构图和缓慢推入制造压抑感
+
+2. **权力反转 (Block 4)**: 产品介入的戏剧化转变
+   - 从Ducth角度（混乱）转为精确直线轨道
+   - EGB灯光展示：宏转宽过渡
+   - 灯光从临床白/蓝转向多彩LED
+   - 消费者角度从高变低（获得权力）
+
+3. **成功阶段 (Block 5)**: 连接与协同
+   - 平行运动：消费者与产品和谐
+   - 深景深：空间清晰广阔
+   - 无人机全景展示空间自由
+   - 干净的双人镜头（消费者+产品）
+
+4. **风格映射**: 科技/未来
+   - 摄影：无人机扫射、宏转宽过渡、精确直线轨道
+   - 灯光：临床白/蓝、LED条纹、眩光点缀
+   - 音频：合成器上升音、清脆高频、静默作为标点
+</camera_strategy>
+</thinking>
+
+<visual_board based_on="upstream plot_outline + copywriting">
+  <style_mapping>
+    <target_style>科技/未来</target_style>
+    <camera>无人机扫射，宏转宽过渡，精确直线轨道移动</camera>
+    <lighting>临床白/蓝，LED条纹，眩光点缀</lighting>
+    <audio>合成器上升音，清脆高频，静默作为标点</audio>
+  </style_mapping>
+  
+  <block ref="1">
+    <camera>ECU → CU → MS (Slow Zoom Out)</camera>
+    <camera_angle>High Angle on Consumer (弱势), Low Angle on Fixed TV Wall (问题主导)</camera_angle>
+    <camera_movement>Static framing, 缓慢向后拉镜头 (reveal trapped space)</camera_movement>
+    <focus_depth>Shallow DOF (Consumer in focus, background blurred)</focus_depth>
+    <lighting>Clinical white overhead lighting with harsh shadows, minimal ambient fill</lighting>
+    <audio_direction>低沉的氛围音乐，轻微的压抑感。音效：沙发细微的吱吱声，空间回声被放大</audio_direction>
+    <power_dynamic>问题主导（固定空间和家具拥有视觉权力，消费者被压迫）</power_dynamic>
+    <visual_note>Frame within a frame: 通过门窗、家具线条将消费者框在构图中心，增强"被困感"</visual_note>
+  </block>
+  
+  <block ref="2">
+    <camera>CUs of consumer's frustrated expressions, MS of failed attempts</camera>
+    <camera_angle>Eye-level but with Dirty Over-the-Shoulder shots (混乱的电线、家具前景)</camera_angle>
+    <camera_movement>Handheld wobble (混乱感), Rapid whip pans between failed attempts</camera_movement>
+    <focus_depth>Rack focus between consumer and problematic objects (混乱的线路)</focus_depth>
+    <lighting>Cool blue tones with clinical white accents, shadows become more pronounced</lighting>
+    <audio_direction>音乐逐渐焦虑，节奏加快。音效：家具拖动声、电线缠结声、小物件掉落声</audio_direction>
+    <power_dynamic>问题持续主导，消费者挫败感累积。视觉混乱反映内心状态</power_dynamic>
+    <visual_note>Dutch angle shots (10-15度倾斜) 增强不稳定感和挫败感</visual_note>
+  </block>
+  
+  <block ref="3">
+    <camera>ECU on consumer's face (绝望表情), WS of chaotic space</camera>
+    <camera_angle>Extreme High Angle on consumer (彻底弱势), Low Angle on chaotic mess (问题达到顶峰)</camera_angle>
+    <camera_movement>Slow Push-in on consumer's face (claustrophobia), Static wide shot of chaos</camera_movement>
+    <focus_depth>Very shallow DOF - only consumer's eyes in focus, everything else blurred</focus_depth>
+    <lighting>Harsh contrast lighting - deep shadows on consumer's face, single source highlighting the chaos</lighting>
+    <audio_direction>音乐突然停止，只有环境音：混乱的嗡嗡声、远处模糊的聊天声。主角深吸一口气的声音被放大</audio_direction>
+    <power_dynamic>问题达到绝对主导，消费者处于完全无助状态（情感低谷）</power_dynamic>
+    <visual_note>使用frame within a frame：消费者被门窗/家具线条完全包围，视觉上"囚禁"</visual_note>
+  </block>
+  
+  <block ref="4">
+    <camera>Macro shot of remote button → Wide shot of product reveal</camera>
+    <camera_angle>Low Angle on consumer (获得权力), Product shot at eye-level (平衡)</camera_angle>
+    <camera_movement>Precise linear dolly forward to product, Smooth orbit around EGB lights</camera_movement>
+    <focus_depth>Deep focus - consumer and product both sharp, background gradually clears</focus_depth>
+    <lighting>Dramatic shift: From harsh white to EGB blue glow, LED streaks forming patterns, lens flares on metal surfaces</lighting>
+    <audio_direction>轻柔但有力的电子音乐开始响起，未来感和魔法感。音效：EGB灯光亮起的细微电子声、滑轮平滑滑动声（几乎无声但能被感知）</audio_direction>
+    <power_dynamic>POWER SHIFT: 消费者通过产品重新获得控制权。产品作为"空间魔法棒"赋予权力</power_dynamic>
+    <visual_note>EGB灯光展示：1) Macro shot of individual LED diodes lighting up 2) Drone sweep revealing full light pattern 3) Light painting effect in slow motion</visual_note>
+  </block>
+  
+  <block ref="5">
+    <camera>Clean Two-Shots (consumer + product), Drone sweeps of transformed space</camera>
+    <camera_angle>Low Hero Angle on consumer (完全掌控), Balanced eye-level shots</camera_angle>
+    <camera_movement>Parallel movement with consumer (harmony), Smooth transitions between modes</camera_movement>
+    <focus_depth>Deep focus throughout - entire space is clear, vast, full of possibilities</focus_depth>
+    <lighting>Scene-specific lighting modes: 1) Cinema - deep blue glow with soft backlighting 2) Gaming - dynamic RGB patterns with LED streaks 3) Party - multi-color ambient with lens flares</lighting>
+    <audio_direction>音乐达到高潮，充满解放感和喜悦感，科幻电影般的宏大感。音效：不同模式切换时灯光变化的电子音效、人们愉悦的笑声</audio_direction>
+    <power_dynamic>消费者完全掌控，产品作为工具和谐共存。空间从限制变为画布</power_dynamic>
+    <visual_note>Three-mode montage: 1) Cinema - cool tones, intimate framing 2) Gaming - vibrant colors, dynamic camera moves 3) Party - wide shots showing full space transformation</visual_note>
+  </block>
+</visual_board>

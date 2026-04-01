@@ -1,0 +1,81 @@
+# ============================================================
+# TVC Director Agent — Docker Compose (一键部署)
+# ============================================================
+# 使用方法:
+#   1. 复制 .env.example 为 .env 并填入 API Key
+#   2. docker compose up --build -d
+#   3. 访问 http://localhost:3000 (前端)
+#   4. API 地址 http://localhost:8123 (后端)
+# ============================================================
+
+services:
+  # ----------------------------------------------------------
+  # PostgreSQL — 持久化数据库 (对话历史/Checkpointer/Thread)
+  # ----------------------------------------------------------
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-langgraph}
+      POSTGRES_USER: ${POSTGRES_USER:-langgraph}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-langgraph-secret-pw-change-me}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"  # 映射到 5433 避免与本地 PG 冲突
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-langgraph}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # ----------------------------------------------------------
+  # LangGraph API Server — 后端 (Agent 运行时)
+  # ----------------------------------------------------------
+  langgraph-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY}
+      LANGSMITH_API_KEY: ${LANGSMITH_API_KEY:-}
+      LANGSMITH_TRACING: ${LANGSMITH_TRACING:-false}
+      LANGSMITH_PROJECT: ${LANGSMITH_PROJECT:-tvc-director-agent}
+      TVC_MODEL: ${TVC_MODEL:-deepseek-chat}
+      LANGGRAPH_POSTGRES_URI: postgresql://${POSTGRES_USER:-langgraph}:${POSTGRES_PASSWORD:-langgraph-secret-pw-change-me}@postgres:5432/${POSTGRES_DB:-langgraph}
+      DATABASE_URI: postgresql://${POSTGRES_USER:-langgraph}:${POSTGRES_PASSWORD:-langgraph-secret-pw-change-me}@postgres:5432/${POSTGRES_DB:-langgraph}
+    ports:
+      - "8123:8000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/ok"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  # ----------------------------------------------------------
+  # Agent Chat UI — 前端 (Next.js)
+  # ----------------------------------------------------------
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        - NEXT_PUBLIC_API_URL=http://192.168.3.28:8123
+        - NEXT_PUBLIC_ASSISTANT_ID=tvc_director
+    restart: unless-stopped
+    depends_on:
+      langgraph-api:
+        condition: service_healthy
+    environment:
+      LANGGRAPH_API_URL: http://langgraph-api:8000
+    ports:
+      - "3000:3000"
+
+volumes:
+  pgdata:
+    driver: local
