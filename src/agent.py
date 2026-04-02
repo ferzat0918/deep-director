@@ -42,19 +42,43 @@ TVC_API_KEY = os.getenv("TVC_API_KEY", os.getenv("DEEPSEEK_API_KEY", ""))
 TVC_API_BASE = os.getenv("TVC_API_BASE", "https://api.deepseek.com")
 MODEL_NAME = os.getenv("TVC_MODEL", "deepseek-chat")  # 默认 V3 (兼容 langgraph dev)
 
-def _create_llm(model_override: str | None = None, temperature: float = 0.7):
-    """创建 LLM 实例（支持任意 OpenAI 兼容的 API 接口）。
-    
-    Args:
-        model_override: 如果指定，使用该模型名称而不是默认的 MODEL_NAME
-        temperature: 温度参数
-    """
+def _create_llm(
+    model_override: str | None = None,
+    temperature: float = 0.7,
+    top_p: float = 1.0,
+    presence_penalty: float = 0.0,
+    frequency_penalty: float = 0.0,
+):
+    """创建 LLM 实例（支持任意 OpenAI 兼容的 API 接口）。"""
     model = model_override or MODEL_NAME
     return ChatOpenAI(
         model=model,
         api_key=TVC_API_KEY,
         base_url=TVC_API_BASE,
         temperature=temperature,
+        top_p=top_p,
+        presence_penalty=presence_penalty,
+        frequency_penalty=frequency_penalty,
+    )
+
+
+def _create_creative_llm():
+    """创建适合发散创作的 LLM（高温度 + 高多样性）。用于编剧/文案/DP。"""
+    return _create_llm(
+        temperature=1.3,
+        top_p=0.95,
+        presence_penalty=0.6,   # 鼓励引入新话题/概念
+        frequency_penalty=0.3,  # 减少重复用词
+    )
+
+
+def _create_orchestrator_llm():
+    """创建适合精确调度和审查的 LLM（低温度）。用于 Showrunner。"""
+    return _create_llm(
+        temperature=0.4,
+        top_p=1.0,
+        presence_penalty=0.0,
+        frequency_penalty=0.0,
     )
 
 # ---------------------------------------------------------------------------
@@ -153,7 +177,7 @@ def _build_subagents():
                 "不涉及文案撰写或镜头设计。"
             ),
             "system_prompt": load_screenwriter_prompt(),
-            "model": _create_llm(),
+            "model": _create_creative_llm(),
         },
         {
             "name": "copywriter",
@@ -165,7 +189,7 @@ def _build_subagents():
                 "不涉及剧情结构或镜头设计。"
             ),
             "system_prompt": load_copywriter_prompt(),
-            "model": _create_llm(),
+            "model": _create_creative_llm(),
         },
         {
             "name": "dp",
@@ -177,7 +201,7 @@ def _build_subagents():
                 "不涉及剧情结构或文案撰写。"
             ),
             "system_prompt": load_dp_prompt(),
-            "model": _create_llm(),
+            "model": _create_creative_llm(),
         },
     ]
 
@@ -193,7 +217,7 @@ def create_tvc_director():
     """
     agent = create_deep_agent(
         name="tvc-director",
-        model=_create_llm(),
+        model=_create_orchestrator_llm(),
         system_prompt=SHOWRUNNER_SYSTEM_PROMPT,
         subagents=_build_subagents(),
         backend=FilesystemBackend(
@@ -211,7 +235,7 @@ def create_tvc_director_local():
     """本地开发版本 — 手动提供 checkpointer。"""
     agent = create_deep_agent(
         name="tvc-director",
-        model=_create_llm(),
+        model=_create_orchestrator_llm(),
         system_prompt=SHOWRUNNER_SYSTEM_PROMPT,
         subagents=_build_subagents(),
         backend=FilesystemBackend(
