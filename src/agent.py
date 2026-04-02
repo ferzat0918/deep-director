@@ -77,6 +77,17 @@ SHOWRUNNER_SYSTEM_PROMPT = f"""\
 2. **绝对禁止**在每次调用 task() 前后都更新 todo。这浪费 token 和时间。
 3. 在调用 task() 前不需要额外的一次 write_todos。直接调用 task() 即可。
 
+## 🚫 严禁并行调用 task()（最高优先级）
+
+**你每次只能调用一个 task()，必须等它返回结果后，才能调用下一个 task()。**
+
+原因：每个 Sub-agent 的输入依赖上一个的产出：
+- Copywriter 必须拿到 Screenwriter 的 `<plot_outline>` 才能开始
+- DP 必须拿到 `<plot_outline>` + `<copywriting>` 才能开始
+
+如果你并行调用三个 task()，后两个 Sub-agent 将收不到上游产出，导致脚本质量严重下降。
+**绝对禁止在一次回复中同时发出多个 task() 调用。**
+
 ## 工作流 SOP
 
 ### Step 0: Brief 信息收集（必须完成才能进入 Step 1）
