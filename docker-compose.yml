@@ -41,7 +41,8 @@ services:
       postgres:
         condition: service_healthy
     environment:
-      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY}
+      TVC_API_KEY: ${TVC_API_KEY}
+      TVC_API_BASE: ${TVC_API_BASE:-https://api.deepseek.com}
       LANGSMITH_API_KEY: ${LANGSMITH_API_KEY:-}
       LANGSMITH_TRACING: ${LANGSMITH_TRACING:-false}
       LANGSMITH_PROJECT: ${LANGSMITH_PROJECT:-tvc-director-agent}

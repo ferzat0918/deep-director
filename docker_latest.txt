@@ -1,0 +1,279 @@
+﻿docker : INFO:langgraph_api.cli:
+所在位置 行:1 字符: 1
++ docker logs agent-langgraph-api-1 --sinc
+e 10m 2>&1 | Out-File -Encodi ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~
+    + CategoryInfo          : NotSpecifie 
+   d: (INFO:langgraph_api.cli::String) [  
+  ], RemoteException
+    + FullyQualifiedErrorId : NativeComma 
+   ndError
+ 
+
+        Welcome to
+
+鈺? 鈹屸攢鈹愨攲鈹愨攲鈹屸攢鈹愨晹鈺愨晽鈹攢鈹愨攲鈹€鈹愨攲鈹€鈹愨敩 鈹?鈺?
+ 鈹溾攢鈹も攤鈹傗攤鈹?鈹晳 鈺︹敎鈹敇鈹溾攢鈹も敎鈹€鈹樷敎鈹€鈹?鈺┾晲鈺濃
+敶 鈹粹敇鈹斺敇鈹斺攢鈹樷暁鈺愨暆鈹粹敂鈹€鈹?鈹粹敶  鈹?鈹?
+- 馃殌 API: [36mhttp://0.0.0.0:8000[0m
+- 馃帹 Studio UI: [36mhttps://smith.langcha
+in.com/studio/?baseUrl=http://0.0.0.0:8000
+[0m
+- 馃摎 API Docs: [36mhttp://0.0.0.0:8000/do
+cs[0m
+
+This in-memory server is designed for deve
+lopment and testing.
+For production use, please use LangSmith D
+eployment.
+
+
+[2m2026-04-02T03:19:20.146415Z[0m [[32m[1minfo     [0m] [1mStarting dev persistence flush loop[0m [[0m[1m[34mlanggraph_runtime_inmem._persistence[0m][0m [36mapi_variant[0m=[35mlocal_dev[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mthread_name[0m=[35mMainThread[0m
+[2m2026-04-02T03:19:20.172149Z[0m [[32m[1minfo     [0m] [1mUsing langgraph_runtime_inmem [0m [[0m[1m[34mlanggraph_runtime[0m][0m [36mapi_variant[0m=[35mlocal_dev[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mthread_name[0m=[35mMainThread[0m
+[2m2026-04-02T03:19:20.196548Z[0m [[32m[1minfo     [0m] [1mUsing auth of type=noop       [0m [[0m[1m[34mlanggraph_api.auth.middleware[0m][0m [36mapi_variant[0m=[35mlocal_dev[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mthread_name[0m=[35mMainThread[0m
+[2m2026-04-02T03:19:20.205062Z[0m [[32m[1minfo     [0m] [1mStarting In-Memory runtime with langgraph-api=0.7.94 and in-memory runtime=0.27.0[0m [[0m[1m[34mlanggraph_runtime_inmem.lifespan[0m][0m [36mapi_variant[0m=[35mlocal_dev[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mlanggraph_runtime_inmem_version[0m=[35m0.27.0[0m [36mthread_name[0m=[35masyncio_0[0m [36mversion[0m=[35m0.7.94[0m
+[2m2026-04-02T03:19:20.243838Z[0m [[32m[1minfo     [0m] [1mStarting metadata loop        [0m [[0m[1m[34mlanggraph_api.metadata[0m][0m [36mapi_variant[0m=[35mlocal_dev[0m [36mendpoint[0m=[35mhttps://api.smith.langchain.com/v1/metadata/submit[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mthread_name[0m=[35mMainThread[0m
+[2m2026-04-02T03:19:20.244654Z[0m [[32m[1minfo     [0m] [1mGetting auth instance: None   [0m [[0m[1m[34mlanggraph_api.auth.custom[0m][0m [36mapi_variant[0m=[35mlocal_dev[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mlanggraph_auth[0m=[35mNone[0m [36mthread_name[0m=[35mMainThread[0m
+[2m2026-04-02T03:19:20.378529Z[0m [[32m[1minfo     [0m] [1m2 changes detected            [0m [[0m[1m[34mwatchfiles.main[0m][0m [36mapi_variant[0m=[35mlocal_dev[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mthread_name[0m=[35mMainThread[0m
+[2m2026-04-02T03:19:21.572943Z[0m [[32m[1minfo     [0m] [1mHTTP Request: POST https://api.smith.langchain.com/v1/metadata/submit "HTTP/1.1 403 Forbidden"[0m [[0m[1m[34mhttpx[0m][0m [36mapi_variant[0m=[35mlocal_dev[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mthread_name[0m=[35mMainThread[0m
+[2m2026-04-02T03:19:21.573848Z[0m [[33m[1mwarning  [0m] [1mLangChain metadata submission failed.[0m [[0m[1m[34mlanggraph_api.metadata[0m][0m [36mapi_variant[0m=[35mlocal_dev[0m [36merror[0m=[35m"Client error '403 Forbidden' for url 'https://api.smith.langchain.com/v1/metadata/submit'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403"[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mthread_name[0m=[35masyncio_1[0m
+[2m2026-04-02T03:19:21.574442Z[0m [[33m[1mwarning  [0m] [1mAll metadata submissions failed, will retry[0m [[0m[1m[34mlanggraph_api.metadata[0m][0m [36mapi_variant[0m=[35mlocal_dev[0m [36mattempted[0m=[35m['langchain'][0m [36mfailed[0m=[35m['langchain'][0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mthread_name[0m=[35masyncio_1[0m
+[2m2026-04-02T03:19:21.910129Z[0m [[32m[1minfo     [0m] [1mImporting graph with id tvc_director[0m [[0m[1m[34mlanggraph_api.timing.timer[0m][0m [36mapi_variant[0m=[35mlocal_dev[0m [36melapsed_seconds[0m=[35m1.6659247860006872[0m [36mgraph_id[0m=[35mtvc_director[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mmodule[0m=[35mNone[0m [36mname[0m=[35m_graph_from_spec[0m [36mpath[0m=[35m./src/agent.py[0m [36mthread_name[0m=[35masyncio_0[0m
+Server started in 4.34s
+[2m2026-04-02T03:19:21.973366Z[0m [[32m[1minfo     [0m] [1mApplication started up in 2.184s[0m [[0m[1m[34mlanggraph_api.timing.timer[0m][0m [36mapi_variant[0m=[35mlocal_dev[0m [36melapsed[0m=[35m2.183674937001342[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mthread_name[0m=[35mMainThread[0m
+[2m2026-04-02T03:19:21.992371Z[0m [[32m[1minfo     [0m] [1mStarting cron scheduler       [0m [[0m[1m[34mlanggraph_api.cron_scheduler[0m][0m [36mapi_variant[0m=[35mlocal_dev[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mthread_name[0m=[35mMainThread[0m
+[2m2026-04-02T03:19:21.992856Z[0m [[32m[1minfo     [0m] [1mStarting queue with shared loop[0m [[0m[1m[34mlanggraph_runtime_inmem.queue[0m][0m [36mapi_variant[0m=[35mlocal_dev[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mthread_name[0m=[35masyncio_1[0m
+[2m2026-04-02T03:19:21.993598Z[0m [[32m[1minfo     [0m] [1mStarting 1 background workers [0m [[0m[1m[34mlanggraph_runtime_inmem.queue[0m][0m [36mapi_variant[0m=[35mlocal_dev[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mthread_name[0m=[35masyncio_1[0m
+[2m2026-04-02T03:19:21.994102Z[0m [[32m[1minfo     [0m] [1mWorker stats                  [0m [[0m[1m[34mlanggraph_runtime_inmem.queue[0m][0m [36mactive[0m=[35m0[0m [36mapi_variant[0m=[35mlocal_dev[0m [36mavailable[0m=[35m1[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mmax[0m=[35m1[0m [36mthread_name[0m=[35masyncio_0[0m
+[2m2026-04-02T03:19:22.085190Z[0m [[32m[1minfo     [0m] [1mServer started in 4.34s       [0m [[0m[1m[34mbrowser_opener[0m][0m [36mapi_variant[0m=[35mlocal_dev[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mmessage[0m=[35m'Server started in 4.34s'[0m [36mthread_name[0m=[35m'Thread-2 (_open_browser)'[0m
+馃帹 Opening Studio in your browser...
+[2m2026-04-02T03:19:22.085393Z[0m [[32m[1minfo     [0m] [1m馃帹 Opening Studio in your browser...[0m [[0m[1m[34mbrowser_opener[0m][0m [36mapi_variant[0m=[35mlocal_dev[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mmessage[0m=[35m'馃帹 Opening Studio in your browser...'[0m [36mthread_name[0m=[35m'Thread-2 (_open_browser)'[0m
+[2m2026-04-02T03:19:22.085668Z[0m [[32m[1minfo     [0m] [1mURL: https://smith.langchain.com/studio/?baseUrl=http://0.0.0.0:8000[0m [[0m[1m[34mbrowser_opener[0m][0m [36mapi_variant[0m=[35mlocal_dev[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mmessage[0m=[35m'URL: https://smith.langchain.com/studio/?baseUrl=http://0.0.0.0:8000'[0m [36mthread_name[0m=[35m'Thread-2 (_open_browser)'[0m
+URL: https://smith.langchain.com/studio/?b
+aseUrl=http://0.0.0.0:8000
+[2m2026-04-02T03:19:22.495205Z[0m [[32m[1minfo     [0m] [1mQueue stats                   [0m [[0m[1m[34mlanggraph_runtime_inmem.queue[0m][0m [36mapi_variant[0m=[35mlocal_dev[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mn_pending[0m=[35m0[0m [36mn_running[0m=[35m0[0m [36mpending_runs_wait_time_max_secs[0m=[35mNone[0m [36mpending_runs_wait_time_med_secs[0m=[35mNone[0m [36mpending_unblocked_runs_wait_time_max_secs[0m=[35mNone[0m [36mthread_name[0m=[35masyncio_1[0m
+[2m2026-04-02T03:19:22.736945Z[0m [[33m[1mwarning  [0m] [1mPOST /threads/21fc28bb-cbc6-4a29-947f-6c0c1bc46eed/history 404 2ms[0m [[0m[1m[34mlanggraph_api.server[0m][0m [36mapi_variant[0m=[35mlocal_dev[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mlatency_ms[0m=[35m2[0m [36mmethod[0m=[35mPOST[0m [36mpath[0m=[35m/threads/{thread_id}/history[0m [36mpath_params[0m=[35m{'thread_id': '21fc28bb-cbc6-4a29-947f-6c0c1bc46eed'}[0m [36mproto[0m=[35m1.1[0m [36mquery_string[0m=[35m[0m [36mreq_header[0m=[35m{}[0m [36mrequest_id[0m=[35m5a5c3f32-ab92-4a5a-a57a-4d69a7d7a587[0m [36mres_header[0m=[35m{}[0m [36mresponse_size_bytes[0m=[35m74[0m [36mroute[0m=[35m/threads/{thread_id}/history[0m [36mrun_id[0m=[35mNone[0m [36mstatus[0m=[35m404[0m [36mthread_name[0m=[35mMainThread[0m [36mttfb_ms[0m=[35m1.79[0m
+[2m2026-04-02T03:19:27.841856Z[0m [[32m[1minfo     [0m] [1mCreated run                   [0m [[0m[1m[34mlanggraph_api.models.run[0m][0m [36mafter_seconds[0m=[35m0[0m [36mapi_variant[0m=[35mlocal_dev[0m [36massistant_id[0m=[35mb7528bf7-ce1d-520d-9e8b-f497afc2cd58[0m [36mcheckpoint_id[0m=[35mNone[0m [36mif_not_exists[0m=[35mreject[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mmethod[0m=[35mPOST[0m [36mmultitask_strategy[0m=[35menqueue[0m [36mpath[0m=[35m/threads/{thread_id}/runs/stream[0m [36mrequest_id[0m=[35m232356aa-c11a-4294-ba16-27c1b3617d4a[0m [36mrun_create_ms[0m=[35m1[0m [36mrun_id[0m=[35m019d4c33-f961-7481-b913-cfb81b796b50[0m [36mrun_put_ms[0m=[35m0[0m [36mstream_mode[0m=[35m['values', 'messages-tuple', 'custom'][0m [36mstream_resumable[0m=[35mTrue[0m [36mtemporary[0m=[35mFalse[0m [36mthread_id[0m=[35mf47c7036-dabd-4e24-80db-586e8d311dcd[0m [36mthread_name[0m=[35mMainThread[0m
+[2m2026-04-02T03:19:28.508991Z[0m [[32m[1minfo     [0m] [1mStarting background run       [0m [[0m[1m[34mlanggraph_api.worker[0m][0m [36mapi_variant[0m=[35mlocal_dev[0m [36massistant_id[0m=[35mb7528bf7-ce1d-520d-9e8b-f497afc2cd58[0m [36mgraph_id[0m=[35mtvc_director[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mrequest_id[0m=[35m232356aa-c11a-4294-ba16-27c1b3617d4a[0m [36mresumable[0m=[35mTrue[0m [36mrun_attempt[0m=[35m1[0m [36mrun_creation_ms[0m=[35m1[0m [36mrun_id[0m=[35m019d4c33-f961-7481-b913-cfb81b796b50[0m [36mrun_queue_ms[0m=[35m666[0m [36mrun_started_at[0m=[35m2026-04-02T03:19:28.508445+00:00[0m [36mrun_stream_start_ms[0m=[35m0[0m [36mtemporary[0m=[35mFalse[0m [36mthread_id[0m=[35mf47c7036-dabd-4e24-80db-586e8d311dcd[0m [36mthread_name[0m=[35masyncio_0[0m
+[2m2026-04-02T03:19:29.630314Z[0m [[32m[1minfo     [0m] [1mHTTP Request: POST https://api.deepseek.com/chat/completions "HTTP/1.1 401 Authorization Required"[0m [[0m[1m[34mhttpx[0m][0m [36mapi_variant[0m=[35mlocal_dev[0m [36massistant_id[0m=[35mb7528bf7-ce1d-520d-9e8b-f497afc2cd58[0m [36mgraph_id[0m=[35mtvc_director[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mlanggraph_node[0m=[35mmodel[0m [36mrequest_id[0m=[35m232356aa-c11a-4294-ba16-27c1b3617d4a[0m [36mrun_attempt[0m=[35m1[0m [36mrun_id[0m=[35m019d4c33-f961-7481-b913-cfb81b796b50[0m [36mthread_id[0m=[35mf47c7036-dabd-4e24-80db-586e8d311dcd[0m [36mthread_name[0m=[35mMainThread[0m
+[2m2026-04-02T03:19:29.635041Z[0m [[31m[1merror    [0m] [1mRun encountered an error in graph: <class 'openai.AuthenticationError'>(Authentication Fails (governor))[0m [[0m[1m[34mlanggraph_api.worker[0m][0m [36mapi_variant[0m=[35mlocal_dev[0m [36massistant_id[0m=[35mb7528bf7-ce1d-520d-9e8b-f497afc2cd58[0m [36mgraph_id[0m=[35mtvc_director[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mrequest_id[0m=[35m232356aa-c11a-4294-ba16-27c1b3617d4a[0m [36mrun_attempt[0m=[35m1[0m [36mrun_id[0m=[35m019d4c33-f961-7481-b913-cfb81b796b50[0m [36mthread_id[0m=[35mf47c7036-dabd-4e24-80db-586e8d311dcd[0m [36mthread_name[0m=[35mMainThread[0m
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/langgraph_api/worker.py", line 207, in wrap_user_errors
+    await consume(
+  File "/usr/local/lib/python3.12/site-packages/langgraph_api/stream.py", line 575, in consume
+    raise e
+  File "/usr/local/lib/python3.12/site-packages/langgraph_api/stream.py", line 563, in consume
+    async for mode, payload in stream:
+  File "/usr/local/lib/python3.12/site-packages/langgraph_api/stream.py", line 392, in astream_state
+    event = await wait_if_not_done(anext(stream, sentinel), done)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langgraph_api/asyncio.py", line 108, in wait_if_not_done
+    raise e.exceptions[0] from None
+  File "/usr/local/lib/python3.12/site-packages/langgraph/pregel/main.py", line 3115, in astream
+    async for _ in runner.atick(
+  File "/usr/local/lib/python3.12/site-packages/langgraph/pregel/_runner.py", line 410, in atick
+    _panic_or_proceed(
+  File "/usr/local/lib/python3.12/site-packages/langgraph/pregel/_runner.py", line 520, in _panic_or_proceed
+    raise exc
+  File "/usr/local/lib/python3.12/site-packages/langgraph/pregel/_retry.py", line 211, in arun_with_retry
+    return await task.proc.ainvoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langgraph/_internal/_runnable.py", line 705, in ainvoke
+    input = await asyncio.create_task(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langgraph/_internal/_runnable.py", line 473, in ainvoke
+    ret = await self.afunc(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langchain/agents/factory.py", line 1361, in amodel_node
+    result = await awrap_model_call_handler(request, _execute_model_async)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langchain/agents/factory.py", line 386, in composed
+    outer_result = await outer(request, inner_handler)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langchain/agents/middleware/todo.py", line 271, in awrap_model_call
+    return await handler(request.override(system_message=new_system_message))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langchain/agents/factory.py", line 376, in inner_handler
+    inner_result = await inner(req, handler)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langchain/agents/factory.py", line 386, in composed
+    outer_result = await outer(request, inner_handler)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/deepagents/middleware/filesystem.py", line 1126, in awrap_model_call
+    return await handler(request)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langchain/agents/factory.py", line 376, in inner_handler
+    inner_result = await inner(req, handler)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langchain/agents/factory.py", line 386, in composed
+    outer_result = await outer(request, inner_handler)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/deepagents/middleware/subagents.py", line 691, in awrap_model_call
+    return await handler(request.override(system_message=new_system_message))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langchain/agents/factory.py", line 376, in inner_handler
+    inner_result = await inner(req, handler)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langchain/agents/factory.py", line 386, in composed
+    outer_result = await outer(request, inner_handler)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/deepagents/middleware/summarization.py", line 1024, in awrap_model_call
+    return await handler(request.override(messages=truncated_messages))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langchain/agents/factory.py", line 376, in inner_handler
+    inner_result = await inner(req, handler)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langchain_anthropic/middleware/prompt_caching.py", line 180, in awrap_model_call
+    return await handler(request)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langchain/agents/factory.py", line 1330, in _execute_model_async
+    output = await model_.ainvoke(messages)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langchain_core/runnables/base.py", line 5708, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 477, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1196, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1154, in agenerate
+    raise exceptions[0]
+  File "/usr/local/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1380, in _agenerate_with_cache
+    async for chunk in self._astream(messages, stop=stop, **kwargs):
+  File "/usr/local/lib/python3.12/site-packages/langchain_openai/chat_models/base.py", line 3190, in _astream
+    async for chunk in super()._astream(*args, **kwargs):
+  File "/usr/local/lib/python3.12/site-packages/langchain_openai/chat_models/base.py", line 1694, in _astream
+    _handle_openai_api_error(e)
+  File "/usr/local/lib/python3.12/site-packages/langchain_openai/chat_models/base.py", line 1667, in _astream
+    response = await self.async_client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 2714, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_base_client.py", line 1884, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_base_client.py", line 1669, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Authentication Fails (governor)
+During task with name 'model' and id 'b85e8514-3ddf-7f37-d4e9-9898ec7e7a9c'
+[2m2026-04-02T03:19:29.655254Z[0m [[31m[1merror    [0m] [1mBackground run failed. Exception: <class 'openai.AuthenticationError'>(Authentication Fails (governor))[0m [[0m[1m[34mlanggraph_api.worker[0m][0m [36mapi_variant[0m=[35mlocal_dev[0m [36massistant_id[0m=[35mb7528bf7-ce1d-520d-9e8b-f497afc2cd58[0m [36mgraph_id[0m=[35mtvc_director[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mrequest_id[0m=[35m232356aa-c11a-4294-ba16-27c1b3617d4a[0m [36mrun_attempt[0m=[35m1[0m [36mrun_completed_in_ms[0m=[35m1814[0m [36mrun_created_at[0m=[35m2026-04-02T03:19:27.841770+00:00[0m [36mrun_ended_at[0m=[35m2026-04-02T03:19:29.654762+00:00[0m [36mrun_exec_ms[0m=[35m1146[0m [36mrun_id[0m=[35m019d4c33-f961-7481-b913-cfb81b796b50[0m [36mrun_started_at[0m=[35m2026-04-02T03:19:28.508445+00:00[0m [36mrun_wait_time_ms[0m=[35m666[0m [36mthread_id[0m=[35mf47c7036-dabd-4e24-80db-586e8d311dcd[0m [36mthread_name[0m=[35masyncio_1[0m
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/langgraph_api/worker.py", line 270, in worker
+    await asyncio.wait_for(
+  File "/usr/local/lib/python3.12/asyncio/tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langgraph_api/worker.py", line 207, in wrap_user_errors
+    await consume(
+  File "/usr/local/lib/python3.12/site-packages/langgraph_api/stream.py", line 575, in consume
+    raise e
+  File "/usr/local/lib/python3.12/site-packages/langgraph_api/stream.py", line 563, in consume
+    async for mode, payload in stream:
+  File "/usr/local/lib/python3.12/site-packages/langgraph_api/stream.py", line 392, in astream_state
+    event = await wait_if_not_done(anext(stream, sentinel), done)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langgraph_api/asyncio.py", line 108, in wait_if_not_done
+    raise e.exceptions[0] from None
+  File "/usr/local/lib/python3.12/site-packages/langgraph/pregel/main.py", line 3115, in astream
+    async for _ in runner.atick(
+  File "/usr/local/lib/python3.12/site-packages/langgraph/pregel/_runner.py", line 410, in atick
+    _panic_or_proceed(
+  File "/usr/local/lib/python3.12/site-packages/langgraph/pregel/_runner.py", line 520, in _panic_or_proceed
+    raise exc
+  File "/usr/local/lib/python3.12/site-packages/langgraph/pregel/_retry.py", line 211, in arun_with_retry
+    return await task.proc.ainvoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langgraph/_internal/_runnable.py", line 705, in ainvoke
+    input = await asyncio.create_task(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langgraph/_internal/_runnable.py", line 473, in ainvoke
+    ret = await self.afunc(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langchain/agents/factory.py", line 1361, in amodel_node
+    result = await awrap_model_call_handler(request, _execute_model_async)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langchain/agents/factory.py", line 386, in composed
+    outer_result = await outer(request, inner_handler)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langchain/agents/middleware/todo.py", line 271, in awrap_model_call
+    return await handler(request.override(system_message=new_system_message))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langchain/agents/factory.py", line 376, in inner_handler
+    inner_result = await inner(req, handler)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langchain/agents/factory.py", line 386, in composed
+    outer_result = await outer(request, inner_handler)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/deepagents/middleware/filesystem.py", line 1126, in awrap_model_call
+    return await handler(request)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langchain/agents/factory.py", line 376, in inner_handler
+    inner_result = await inner(req, handler)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langchain/agents/factory.py", line 386, in composed
+    outer_result = await outer(request, inner_handler)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/deepagents/middleware/subagents.py", line 691, in awrap_model_call
+    return await handler(request.override(system_message=new_system_message))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langchain/agents/factory.py", line 376, in inner_handler
+    inner_result = await inner(req, handler)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langchain/agents/factory.py", line 386, in composed
+    outer_result = await outer(request, inner_handler)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/deepagents/middleware/summarization.py", line 1024, in awrap_model_call
+    return await handler(request.override(messages=truncated_messages))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langchain/agents/factory.py", line 376, in inner_handler
+    inner_result = await inner(req, handler)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langchain_anthropic/middleware/prompt_caching.py", line 180, in awrap_model_call
+    return await handler(request)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langchain/agents/factory.py", line 1330, in _execute_model_async
+    output = await model_.ainvoke(messages)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langchain_core/runnables/base.py", line 5708, in ainvoke
+    return await self.bound.ainvoke(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 477, in ainvoke
+    llm_result = await self.agenerate_prompt(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1196, in agenerate_prompt
+    return await self.agenerate(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1154, in agenerate
+    raise exceptions[0]
+  File "/usr/local/lib/python3.12/site-packages/langchain_core/language_models/chat_models.py", line 1380, in _agenerate_with_cache
+    async for chunk in self._astream(messages, stop=stop, **kwargs):
+  File "/usr/local/lib/python3.12/site-packages/langchain_openai/chat_models/base.py", line 3190, in _astream
+    async for chunk in super()._astream(*args, **kwargs):
+  File "/usr/local/lib/python3.12/site-packages/langchain_openai/chat_models/base.py", line 1694, in _astream
+    _handle_openai_api_error(e)
+  File "/usr/local/lib/python3.12/site-packages/langchain_openai/chat_models/base.py", line 1667, in _astream
+    response = await self.async_client.create(**payload)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/resources/chat/completions/completions.py", line 2714, in create
+    return await self._post(
+           ^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_base_client.py", line 1884, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/openai/_base_client.py", line 1669, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.AuthenticationError: Authentication Fails (governor)
+During task with name 'model' and id 'b85e8514-3ddf-7f37-d4e9-9898ec7e7a9c'
+[2m2026-04-02T03:19:30.320938Z[0m [[32m[1minfo     [0m] [1m6 changes detected            [0m [[0m[1m[34mwatchfiles.main[0m][0m [36mapi_variant[0m=[35mlocal_dev[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mthread_name[0m=[35mMainThread[0m
+[2m2026-04-02T03:19:40.218286Z[0m [[32m[1minfo     [0m] [1m2 changes detected            [0m [[0m[1m[34mwatchfiles.main[0m][0m [36mapi_variant[0m=[35mlocal_dev[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mthread_name[0m=[35mMainThread[0m
+[2m2026-04-02T03:19:40.569561Z[0m [[32m[1minfo     [0m] [1m6 changes detected            [0m [[0m[1m[34mwatchfiles.main[0m][0m [36mapi_variant[0m=[35mlocal_dev[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mthread_name[0m=[35mMainThread[0m
+[2m2026-04-02T03:19:50.461492Z[0m [[32m[1minfo     [0m] [1m6 changes detected            [0m [[0m[1m[34mwatchfiles.main[0m][0m [36mapi_variant[0m=[35mlocal_dev[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mthread_name[0m=[35mMainThread[0m
+[2m2026-04-02T03:20:00.365282Z[0m [[32m[1minfo     [0m] [1m6 changes detected            [0m [[0m[1m[34mwatchfiles.main[0m][0m [36mapi_variant[0m=[35mlocal_dev[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mthread_name[0m=[35mMainThread[0m
+[2m2026-04-02T03:20:10.272959Z[0m [[32m[1minfo     [0m] [1m6 changes detected            [0m [[0m[1m[34mwatchfiles.main[0m][0m [36mapi_variant[0m=[35mlocal_dev[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mthread_name[0m=[35mMainThread[0m
+[2m2026-04-02T03:20:20.524545Z[0m [[32m[1minfo     [0m] [1m6 changes detected            [0m [[0m[1m[34mwatchfiles.main[0m][0m [36mapi_variant[0m=[35mlocal_dev[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mthread_name[0m=[35mMainThread[0m
+[2m2026-04-02T03:20:22.267468Z[0m [[32m[1minfo     [0m] [1mWorker stats                  [0m [[0m[1m[34mlanggraph_runtime_inmem.queue[0m][0m [36mactive[0m=[35m0[0m [36mapi_variant[0m=[35mlocal_dev[0m [36mavailable[0m=[35m1[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mmax[0m=[35m1[0m [36mthread_name[0m=[35masyncio_0[0m
+[2m2026-04-02T03:20:22.769339Z[0m [[32m[1minfo     [0m] [1mQueue stats                   [0m [[0m[1m[34mlanggraph_runtime_inmem.queue[0m][0m [36mapi_variant[0m=[35mlocal_dev[0m [36mlanggraph_api_version[0m=[35m0.7.94[0m [36mn_pending[0m=[35m0[0m [36mn_running[0m=[35m0[0m [36mpending_runs_wait_time_max_secs[0m=[35mNone[0m [36mpending_runs_wait_time_med_secs[0m=[35mNone[0m [36mpending_unblocked_runs_wait_time_max_secs[0m=[35mNone[0m [36mthread_name[0m=[35masyncio_1[0m
