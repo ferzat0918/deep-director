@@ -18,6 +18,7 @@ from deepagents import create_deep_agent
 from deepagents.backends import FilesystemBackend
 from langgraph.checkpoint.memory import MemorySaver
 from langchain_openai import ChatOpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
 
 from src.prompts import (
     load_copywriter_prompt,
@@ -37,10 +38,15 @@ load_dotenv()
 # Web 前端(langgraph dev) 用 V3: 速度快、异步兼容
 # 终端脚本(chat.py) 用 R1: 质量最高、阻塞式思考
 #
-# 可通过环境变量覆盖，支持任意 OpenAI 兼容的 API 供应商
+# 可通过环境变量覆盖，支持任意 OpenAI 兼容接口 或 Google 原生接口
+#
+# TVC_PROVIDER=openai  (默认) — 使用 ChatOpenAI，配合 TVC_API_KEY + TVC_API_BASE
+# TVC_PROVIDER=google          — 使用 ChatGoogleGenerativeAI，配合 GOOGLE_API_KEY
+TVC_PROVIDER = os.getenv("TVC_PROVIDER", "openai").lower()
 TVC_API_KEY = os.getenv("TVC_API_KEY", os.getenv("DEEPSEEK_API_KEY", ""))
 TVC_API_BASE = os.getenv("TVC_API_BASE", "https://api.deepseek.com")
-MODEL_NAME = os.getenv("TVC_MODEL", "deepseek-chat")  # 默认 V3 (兼容 langgraph dev)
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")
+MODEL_NAME = os.getenv("TVC_MODEL", "deepseek-chat")
 
 def _create_llm(
     model_override: str | None = None,
@@ -49,8 +55,19 @@ def _create_llm(
     presence_penalty: float = 0.0,
     frequency_penalty: float = 0.0,
 ):
-    """创建 LLM 实例（支持任意 OpenAI 兼容的 API 接口）。"""
+    """创建 LLM 实例，自动检测供应商类型。
+    TVC_PROVIDER=google  → ChatGoogleGenerativeAI (GOOGLE_API_KEY)
+    TVC_PROVIDER=openai  → ChatOpenAI (TVC_API_KEY + TVC_API_BASE)
+    """
     model = model_override or MODEL_NAME
+    if TVC_PROVIDER == "google":
+        return ChatGoogleGenerativeAI(
+            model=model,
+            google_api_key=GOOGLE_API_KEY,
+            temperature=temperature,
+            top_p=top_p,
+            # Google SDK 不支持 presence/frequency_penalty，忽略
+        )
     return ChatOpenAI(
         model=model,
         api_key=TVC_API_KEY,
