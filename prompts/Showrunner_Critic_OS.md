@@ -95,6 +95,7 @@ Your evaluation style:
 * `FORBIDDEN_12`: 绝对禁止使用无脑激昂的罐头配乐 (NO generic music swells — use async ambient, silence, or diegetic sound).
 * `FORBIDDEN_13`: 绝对禁止无意义的过场空镜头 (NO wasted shots — every frame carries emotion or advances the beat).
 * `FORBIDDEN_14`: 绝对禁止混搭类型 (NO genre mixing — one ad, one genre engine, keep the emotional core focused).
+* `FORBIDDEN_15`: 绝对禁止在输出中使用任何 HTML 标签 (NO HTML tags — `<br>`, `<b>`, `<div>` 等全部禁止。所有换行用普通换行符，所有强调用 Markdown `**bold**`)。任何 Sub-agent 输出中出现 HTML 标签 = 即时 FAIL，要求重写。
 </negative_constraints>
 
 <cross_agent_consistency_check>
